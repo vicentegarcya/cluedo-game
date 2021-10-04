@@ -59,10 +59,6 @@ let mrGreen = {
       "https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/07/04/08/unspecified-3.jpg",
     color: "yellow",
   };
-  
-  let suspectsArray = [
-      mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard
-  ];
 
 
   // ### Weapons
@@ -111,10 +107,6 @@ let mrGreen = {
     name: 'pistol',
     weight: 20,
   };
-
-  let weaponsArray = [
-      pistol, trophy, bat, axe, poison, dumbbell, candlestick, knife, rope, 
-  ];
   
   // ### Rooms
   
@@ -164,6 +156,43 @@ let mrGreen = {
     name: "Patio",
   };
 
+
+
+  let suspectsArray = [
+    mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard
+  ];
+
+  let weaponsArray = [
+    pistol, trophy, bat, axe, poison, dumbbell, candlestick, knife, rope, 
+  ];
+
   let roomsArray = [
       diningRoom, conservatory, study, kitchen, library, billiardRoom, lounge, ballroom, hall, spa, livingRoom, observatory, guestHouse, patio, theater
   ] ;
+
+  //Function that picks a random suspect, weapon and room:
+
+  function pickMystery() {
+    let suspect = suspectsArray[Math.floor(Math.random() * suspectsArray.length)];
+    let weapon = weaponsArray[Math.floor(Math.random() * weaponsArray.length)];
+    let room = roomsArray[Math.floor(Math.random() * roomsArray.length)];
+    return { suspect, weapon, room};
+  }
+
+  let mystery = pickMystery(); //Who killed MrBody with what in which room
+
+  //Function that prints all the arrays we have
+
+  function showArrays(arr) {
+    arr.forEach(function(item){
+      document.body.innerHTML += `<li> ${item.name} </li>`
+    })
+  }
+
+  showArrays(suspectsArray);
+  showArrays(weaponsArray);
+  showArrays(roomsArray);
+
+  //Get what user types
+
+  document.getElementById("suspect");
