@@ -183,16 +183,36 @@ let mrGreen = {
 
   //Function that prints all the arrays we have
 
-  function showArrays(arr) {
-    arr.forEach(function(item){
-      document.body.innerHTML += `<li> ${item.name} </li>`
-    })
+  function showArrays(arr, id) {
+    for (let i=0; i < arr.length; i++) {
+      document.getElementById(id).innerHTML += `<li> ${arr[i].name} </li>`;
+    }
   }
 
-  showArrays(suspectsArray);
-  showArrays(weaponsArray);
-  showArrays(roomsArray);
+  showArrays(suspectsArray, "suspects-list");
+  showArrays(weaponsArray, "weapons-list");
+  showArrays(roomsArray, "rooms-list");
 
   //Get what user types
 
-  document.getElementById("suspect");
+  document.querySelector("button").onclick = guess;
+
+  alert("Choose a murderer, a room and a weapon");
+  function guess(){
+    //Take what the user writes
+    let guessedSuspect = document.getElementById("suspect").value;
+    let guessedRoom = document.getElementById("room").value;
+    let guessedWeapon = document.getElementById("weapon").value;
+    //Compare with the Mystery to be guessed
+    if (guessedSuspect === mystery.suspect.name 
+      && guessedRoom === mystery.room.name && 
+      guessedWeapon === mystery.weapon.name)
+    {
+      alert("You guessed right! Congrats!")
+    } else {
+      alert("You guessed wrong!");
+      alert(mystery.suspect.name + ' killed Mr.Body in the ' + mystery.room.name + ' with a ' + mystery.weapon.name);
+    }
+    //Display a photo of the murderer
+    document.body.innerHTML = `<img src="${mystery.suspect.image}">`;
+  }
