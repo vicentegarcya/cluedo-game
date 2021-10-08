@@ -1,0 +1,76 @@
+
+/* Global Styles*/
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #523109;
+    background-color: #fff6eb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+
+/* GUESS AREA starts here */
+.guess-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    border-color: #523109;
+    background-color: #523109;
+    color: #fff6eb;
+    padding: 10px 40px;
+}
+
+button:hover {
+    border-color: #613e14;
+    background-color: #613e14;
+    color: #fff6eb;
+    padding: 10px 40px;
+}
+
+input {
+    border-color: #523109;
+    background-color: #fcf9f5;
+    color: #613e14;
+    padding: 10px 20px;
+    margin: 10px;
+    width: 120px;
+}
+
+input:focus {
+    background-color: #fcf9f5;
+    border-color: #523109;
+    outline: none;
+}
+
+
+/* LIST OF CHOICES starts here */
+.choices-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.choices-list > div {
+    margin: 20px;
+}
+
+.choices-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.choices-section > div {
+    text-align: center;
+}

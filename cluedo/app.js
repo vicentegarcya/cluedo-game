@@ -185,7 +185,7 @@ let mrGreen = {
 
   function showArrays(arr, id) {
     for (let i=0; i < arr.length; i++) {
-      document.getElementById(id).innerHTML += `<li> ${arr[i].name} </li>`;
+      document.getElementById(id).innerHTML += `${arr[i].name}<br>`;
     }
   }
 

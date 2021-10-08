@@ -2,18 +2,39 @@
 <html lang="en">
 <head>
     <title>Cluedo Game</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap');
+    </style> 
 </head>
 <body>
     <h1>Cluedo</h1>
-    <input type="text" placeholder="Suspect" id="suspect">
+
+    <div class="guess-area">
+        <input type="text" placeholder="Suspect" id="suspect">
     killed Mr. Body in the
-    <input type="text" placeholder="room" id="room">
+        <input type="text" placeholder="room" id="room">
     with the
-    <input type="text" placeholder="weapon" id="weapon">
-    <button id="guess-btn">Guess</button>
-    <div id="suspects-list"></div>
-    <div id="rooms-list"></div>
-    <div id="weapons-list"></div>
+        <input type="text" placeholder="weapon" id="weapon">
+        <button id="guess-btn">Guess</button>
+    </div>
+
+    <div class="choices-list">
+        <div class="choices-section">
+            <h2>Suspects</h2>
+            <div id="suspects-list"></div>
+        </div>
+        
+        <div class="choices-section">
+            <h2>Rooms</h2>
+            <div id="rooms-list"></div>
+        </div>
+        <div class="choices-section">
+            <h2>Weapons</h2>
+            <div id="weapons-list"></div>
+        </div>
+    </div>
+
     <script src="/app.js"></script>
 </body>
 </html>
